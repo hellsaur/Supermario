@@ -1,0 +1,146 @@
+<html>
+    <head>
+    <title>Mario Animation</title>
+    </head>
+    <style>
+    
+        *{
+            margin:0;    
+        } 
+        
+        #box{
+            
+        }
+    #mario {
+  position: absolute; 
+        top: 290px;
+        left: -50px;
+}
+        #bg{
+            position: relative;
+        }
+        #luigi{
+         position: absolute;  
+            top:290px;
+            left: -80px;
+            }
+        #peach{
+            position: absolute;
+            top:165px;
+            left:890px;
+        }
+        audio{
+            display:none;
+        }
+        #animation{
+       
+        }
+        body{
+            background-color: black;
+        }
+    </style>
+<body>
+    <div id="animation">
+    <div id ="box"></div>
+    <audio id="song" controls autoplay>
+    <source src="ending.mp3">
+    </audio>
+    
+    <audio id="mamamia" controls >
+    <source src="mamamia.wav">
+    </audio>
+   <div id="bg"> 
+       <img src="map.jpg" width="1300"> 
+    <div id ="mario">
+    
+    <img src="giphy.webp" height="60">
+    
+    </div>
+       <div id = "luigi">
+        <img src="luigi.gif" height="60">
+        
+        </div>
+       <div id="peach">
+       <img src="peach.gif-c200" height="60">
+       </div>
+    </div>  
+     <button onclick="Luigi()">chapter 1</button> 
+    <button onclick="Mario()">chapter 2</button> 
+    <button onclick="Peach()">chapter 3</button> 
+    <button onclick="playAudio()" type="button">chapter 4</button>
+    <button onclick="pauseAudio()" type="button">Pause Audio</button>
+    
+    
+    </div>
+<script>
+    
+    function Mario() {
+  var elem = document.getElementById("mario");   
+  var pos = -20;
+  var id = setInterval(frame, 6);
+  function frame() {
+    if (pos == 890) {
+    elem.parentNode.removeChild(elem);
+        alert(" Mario has entered the castle");
+    } else {
+         pos++; 
+      elem.style.left = pos + 'px'; 
+     
+    }
+  }
+        
+}
+function Luigi() {
+  var elem = document.getElementById("luigi");   
+  var pos = -20;
+  var id = setInterval(frame, 6);
+  function frame() {
+    if (pos == 880) {
+      elem.parentNode.removeChild(elem);
+         alert("Luigi has entered the castle");
+    } else {
+         pos++; 
+      
+      elem.style.left = pos + 'px';
+     
+    }
+  }
+        
+}
+
+ function Peach() {
+  var elem = document.getElementById("peach");   
+  var pos = 0;
+  var id = setInterval(frame, 6);
+  function frame() {
+    if (pos == 0) {
+      elem.parentNode.removeChild(elem);
+         alert(" Peach went inside to greet Mario and Luigi");
+    } 
+      
+    }
+  }
+        
+var x = document.getElementById("song"); 
+
+function pauseAudio() { 
+    x.pause(); 
+} 
+
+ var y = document.getElementById("mamamia");    
+ 
+  function playAudio() {
+    y.play();
+     
+      alert(" Mario freaks out after what he found inside the castle."+ "\n\n" + "... to be continued...");   
+} 
+
+
+function respawn() {
+    document.getElementById("animation").reset();
+}
+
+</script>
+   
+</body>
+</html>

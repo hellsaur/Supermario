@@ -42,6 +42,7 @@
 <body>
     <div id="animation">
     <div id ="box"></div>
+        <!--These are audio tags -->
     <audio id="song" controls autoplay>
     <source src="audio/ending.mp3">
     </audio>
@@ -49,8 +50,10 @@
     <audio id="mamamia" controls >
     <source src="audio/mamamia.wav">
     </audio>
-   <div id="bg"> 
-       <img src="images/map.jpg" width="1300"> 
+        
+   <div id="bg"> <!-- this is the container --> 
+       <img src="images/map.jpg" width="1300">
+       <!-- these are the characters -->
     <div id ="mario">
     
     <img src="images/giphy.webp" height="60">
@@ -63,7 +66,7 @@
        <div id="peach">
        <img src="images/peach.gif-c200" height="60">
        </div>
-    </div>  
+    </div>  <!-- buttons for "chapters" -->
      <button onclick="Luigi()">chapter 1</button> 
     <button onclick="Mario()">chapter 2</button> 
     <button onclick="Peach()">chapter 3</button> 
@@ -73,7 +76,7 @@
     
     </div>
 <script>
-    
+    // this function makes mario works
     function Mario() {
   var elem = document.getElementById("mario");   
   var pos = -20;
@@ -90,6 +93,7 @@
   }
         
 }
+    // this is luigi's function.
 function Luigi() {
   var elem = document.getElementById("luigi");   
   var pos = -20;
@@ -107,7 +111,7 @@ function Luigi() {
   }
         
 }
-
+ // princess peach function
  function Peach() {
   var elem = document.getElementById("peach");   
   var pos = 0;
@@ -120,15 +124,14 @@ function Luigi() {
       
     }
   }
-        
+    // this pauses autoplaying background song .   
 var x = document.getElementById("song"); 
 
 function pauseAudio() { 
     x.pause(); 
 } 
-
- var y = document.getElementById("mamamia");    
- 
+ //everytime you press "chapter 4" button this sound plays.
+ var y = document.getElementById("mamamia");   
   function playAudio() {
     y.play();
      
@@ -136,8 +139,8 @@ function pauseAudio() {
 } 
 
 
-function respawn() {
-    document.getElementById("animation").reset();
+//function respawn() {
+//    document.getElementById("animation").reset();
 }
 
 </script>
